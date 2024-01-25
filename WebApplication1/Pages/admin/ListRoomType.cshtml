@@ -1,0 +1,43 @@
+﻿@page "/admin/room/listRoomType"
+@using MotelManagement.Data.Models
+@model MotelManagement.Pages.admin.ListRoomTypeModel
+@{
+}
+
+<div class="page-header">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="mt-5">
+                <a href="/admin/room/AddNewRoomType" class="btn btn-primary float-right">Thêm Loại phòng</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card card-table">
+            <div class="card-body booking_card">
+                <div class="table-responsive">
+                    <table class="table table-stripped table table-hover table-center mb-0">
+                        <thead>
+                            <tr>
+                                <th>Mã số</th>
+                                <th>Tên loại phòng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (RoomType room in (List<RoomType>)@ViewData["roomsType"])
+                            {
+                                <tr>
+                                    <td>@room.RoomTypeId</td>
+                                    <td>@room.Name</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

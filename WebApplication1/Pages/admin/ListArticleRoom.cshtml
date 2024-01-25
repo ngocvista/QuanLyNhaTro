@@ -1,0 +1,36 @@
+﻿@page "/admin/Article/list"
+@using MotelManagement.Data.Models
+@model MotelManagement.Pages.admin.ListArticleRoomModel
+@{
+}
+<div class="col-sm-12">
+    <div class="card card-table">
+        <div class="card-body booking_card">
+            <div class="table-responsive">
+                <table class="table table-stripped table table-hover table-center mb-0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Tên đầu mục</th>
+                            <th>Miêu tả</th>
+                            <th>Hình ảnh</th
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (ArticleRoom Article in (List<ArticleRoom>)@ViewData["lstArticleRoom"])
+                        {
+                            <tr>
+                                <td>@Article.Articleid</td>
+                                 <td>@Article.header</td>
+                                 <td>@Article.Content</td>
+                                 <td>
+                                     <img src="/upload/@Article.ImageArticle">
+                                 </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
